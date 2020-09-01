@@ -40,6 +40,8 @@ else()
     mainwindow.cpp
     mainwindow.h
     mainwindow.ui
+    renderarea.cpp
+    renderarea.h
   )
 endif()
 
