@@ -14,13 +14,15 @@ public:
     QSize sizeHint() const Q_DECL_OVERRIDE;
 
     //Geometric figures enumeration
-    enum Shapes{Astroid, Ciclod, HyugensCicloid, HypoCicloid};
+    enum ShapeType{Astroid, Cycloid, HyugensCycloid, HypoCycloid};
 
-    //Setter
-    void setBackgroundColor(QColor color){mBackgroundColor = color;}
-    //Getter
+    //Function to set the background color
+    void setBackgroundColor(QColor color){mBackgroundColor = color;}//Setter
     //'const' to prevent modification of any member class variable
-    QColor backgroundColor() const {return mBackgroundColor;}
+    QColor backgroundColor() const {return mBackgroundColor;}//Getter
+
+    void setShape(ShapeType shape) {mShape = shape;}//Setter
+    ShapeType shape () const {return mShape;}//Getter
 protected:
     void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
 
@@ -31,6 +33,7 @@ public slots:
 private:
     QColor mBackgroundColor;
     QColor mShapeColor;
+    ShapeType mShape;
 
 };
 

@@ -16,27 +16,25 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_btnAstroid_clicked()
 {
-    //Change background color for render area
-    //Add a function to change the background
-
-    this -> ui -> renderArea -> setBackgroundColor(Qt::red);
+    //Set the render area's shape
+    this -> ui -> renderArea -> setShape(RenderArea::Astroid);
     this -> ui -> renderArea -> repaint();
 }
 
 void MainWindow::on_btnCicloid_clicked()
 {
-    this -> ui -> renderArea -> setBackgroundColor(Qt::green);
+    this -> ui -> renderArea -> setShape(RenderArea::Cycloid);
     this -> ui -> renderArea -> repaint();
 }
 
 void MainWindow::on_btHyugensCicloid_clicked()
 {
-    this -> ui -> renderArea -> setBackgroundColor(Qt::blue);
+    this -> ui -> renderArea -> setShape(RenderArea::HyugensCycloid);
     this -> ui -> renderArea -> repaint();
 }
 
 void MainWindow::on_btnHypoCicloid_clicked()
 {
-    this -> ui -> renderArea -> setBackgroundColor(Qt::yellow);
+    this -> ui -> renderArea -> setShape(RenderArea::HypoCycloid);
     this -> ui -> renderArea -> repaint();
 }
