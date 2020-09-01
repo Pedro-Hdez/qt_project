@@ -1,0 +1,1 @@
+/usr/bin/g++  -g   CMakeFiles/qt_curves.dir/qt_curves_autogen/mocs_compilation.cpp.o CMakeFiles/qt_curves.dir/main.cpp.o CMakeFiles/qt_curves.dir/mainwindow.cpp.o CMakeFiles/qt_curves.dir/renderarea.cpp.o  -o qt_curves  /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.12.8 /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.12.8 /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8 

@@ -1,0 +1,68 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "qt_curves",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "qt_curves::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-qt_curves-Debug-9b962b730dc890dfea4e.json",
+					"name" : "qt_curves",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "qt_curves_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-qt_curves_autogen-Debug-93b17ff7e17adfffe2ee.json",
+					"name" : "qt_curves_autogen",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/pedro/uni/cursos/qt/proyecto/build-qt_curves-Desktop-Debug",
+		"source" : "/home/pedro/uni/cursos/qt/local/qt_curves"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 0
+	}
+}

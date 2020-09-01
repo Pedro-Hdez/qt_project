@@ -1,0 +1,4 @@
+/home/pedro/uni/cursos/qt/proyecto/build-qt_curves-Desktop-Debug/CMakeFiles/rebuild_cache.dir
+/home/pedro/uni/cursos/qt/proyecto/build-qt_curves-Desktop-Debug/CMakeFiles/edit_cache.dir
+/home/pedro/uni/cursos/qt/proyecto/build-qt_curves-Desktop-Debug/CMakeFiles/qt_curves.dir
+/home/pedro/uni/cursos/qt/proyecto/build-qt_curves-Desktop-Debug/CMakeFiles/qt_curves_autogen.dir
