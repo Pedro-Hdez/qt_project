@@ -21,13 +21,15 @@ public:
     //'const' to prevent modification of any member class variable
     QColor backgroundColor() const {return mBackgroundColor;}//Getter
 
-    //Function to set the current Shape
-    void setShape(ShapeType shape) {mShape = shape;}//Setter
+    //Function to set the current Shape. Also, it load different values...
+    //...into scale interval and step count.
+    void setShape(ShapeType shape) {mShape = shape; on_shape_changed();}//Setter
     ShapeType shape () const {return mShape;}//Getter
 
 private:
     //Function to compute the astroid
     QPointF compute_astroid(float t);
+    void on_shape_changed();
 
 protected:
     void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
@@ -40,6 +42,9 @@ private:
     QColor mBackgroundColor;
     QColor mShapeColor;
     ShapeType mShape;
+    float mIntervalLength;
+    float mScale;
+    int mStepCount;
 
 };
 

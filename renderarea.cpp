@@ -9,6 +9,7 @@ RenderArea::RenderArea(QWidget *parent) :
     mShapeColor(255, 255, 255),
     mShape(Astroid)
 {
+    on_shape_changed();
 }
 
 QSize RenderArea::minimumSizeHint() const
@@ -24,6 +25,26 @@ QSize RenderArea::sizeHint() const
 //Function to compute the astroid function.
 QPointF RenderArea::compute_astroid(float t){
     return QPointF(2 * powf(cos(t), 3), 2 * powf(sin(t), 3));
+}
+
+//Loads specific values for Scale and Interval Length
+void RenderArea::on_shape_changed(){
+    switch(mShape){
+    case Astroid:
+        mScale = 40;
+        mIntervalLength = 2 * M_PI;
+        mStepCount = 256;
+        break;
+    case Cycloid:
+        break;
+    case HyugensCycloid:
+        break;
+    case HypoCycloid:
+        break;
+    default:
+        break;
+
+    }
 }
 
 void RenderArea::paintEvent(QPaintEvent *event)
@@ -65,20 +86,17 @@ void RenderArea::paintEvent(QPaintEvent *event)
 
 
     QPoint center = this -> rect().center(); //Render area's center
-    float scale = 100; //Scale
-    float intervalLength = 2 * M_PI; //Interval length
-    int stepCount = 256; //Total steps
-    float step = intervalLength / stepCount; //Individual steps
+    float step = mIntervalLength / mStepCount; //Individual steps
 
     //Loop for paint our shape
-    for (float t = 0 ; t < intervalLength; t += step){
+    for (float t = 0 ; t < mIntervalLength; t += step){
         //Value of the function for t
         QPointF point = compute_astroid(t);
 
         //Pixel for t in our render area
         QPoint pixel;
-        pixel.setX(point.x() * scale + center.x());
-        pixel.setY(point.y() * scale + center.y());
+        pixel.setX(point.x() * mScale + center.x());
+        pixel.setY(point.y() * mScale + center.y());
 
         //Instruction to paint a pixel
         painter.drawPoint(pixel);
