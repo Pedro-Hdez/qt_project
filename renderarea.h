@@ -21,8 +21,14 @@ public:
     //'const' to prevent modification of any member class variable
     QColor backgroundColor() const {return mBackgroundColor;}//Getter
 
+    //Function to set the current Shape
     void setShape(ShapeType shape) {mShape = shape;}//Setter
     ShapeType shape () const {return mShape;}//Getter
+
+private:
+    //Function to compute the astroid
+    QPointF compute_astroid(float t);
+
 protected:
     void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
 

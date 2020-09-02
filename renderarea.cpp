@@ -1,6 +1,7 @@
 #include "renderarea.h"
 #include <QPainter>
 #include <QPaintEvent>
+#include <math.h>
 
 RenderArea::RenderArea(QWidget *parent) :
     QWidget(parent),
@@ -18,6 +19,11 @@ QSize RenderArea::minimumSizeHint() const
 QSize RenderArea::sizeHint() const
 {
     return QSize(400, 200);
+}
+
+//Function to compute the astroid function.
+QPointF RenderArea::compute_astroid(float t){
+    return QPointF(2 * powf(cos(t), 3), 2 * powf(sin(t), 3));
 }
 
 void RenderArea::paintEvent(QPaintEvent *event)
@@ -49,16 +55,35 @@ void RenderArea::paintEvent(QPaintEvent *event)
 
     }
 
+    //Set the color for the background
     painter.setBrush(mBackgroundColor);
+    //Set the color for the shape
     painter.setPen(mShapeColor);
 
-    //Draw a rectangle in the entire render area
+    //Draw a rectangle in the entire render area (Background)
     painter.drawRect(this -> rect());
-    //Draw a line
-    painter.drawLine(this->rect().topLeft(), this->rect().bottomRight());
 
 
-    painter.setBrush(mBackgroundColor);
+    QPoint center = this -> rect().center(); //Render area's center
+    float scale = 100; //Scale
+    float intervalLength = 2 * M_PI; //Interval length
+    int stepCount = 256; //Total steps
+    float step = intervalLength / stepCount; //Individual steps
+
+    //Loop for paint our shape
+    for (float t = 0 ; t < intervalLength; t += step){
+        //Value of the function for t
+        QPointF point = compute_astroid(t);
+
+        //Pixel for t in our render area
+        QPoint pixel;
+        pixel.setX(point.x() * scale + center.x());
+        pixel.setY(point.y() * scale + center.y());
+
+        //Instruction to paint a pixel
+        painter.drawPoint(pixel);
+
+    }
 
 }
 
